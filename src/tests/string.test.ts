@@ -1,4 +1,4 @@
-import { assert, assertEquals } from "../../deps.test.ts";
+import { assert, assertEquals } from "./deps.test.ts";
 import {} from "../std/string.ts";
 
 Deno.test("string: pathExists", () => {
