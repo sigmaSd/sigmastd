@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.130.0/testing/asserts.ts";
-import {} from "./array.ts";
+import {} from "../std/array.ts";
 
 Deno.test("array: parallelMap", async () => {
   assertEquals(
@@ -28,5 +28,16 @@ Deno.test("array: split", () => {
   assertEquals(
     [].split((b) => b === "b"),
     [[]],
+  );
+});
+
+Deno.test("array: filterMap", () => {
+  assertEquals(
+    ["a", "b", "c"].filterMap((b) => b === "b" ? "hello" : null),
+    ["hello"],
+  );
+  assertEquals(
+    ["a", "c"].filterMap((b) => b === "b" ? "hello" : null),
+    [],
   );
 });
